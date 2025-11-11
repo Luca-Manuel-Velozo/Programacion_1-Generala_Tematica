@@ -1,3 +1,4 @@
-import Funciones as F
+import Funciones_Generales as Fg
+import Funciones_Juego as Fj
 
-F.menu()
+Fg.menu()
