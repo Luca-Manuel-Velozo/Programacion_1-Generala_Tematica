@@ -6,5 +6,5 @@ Alumnos:
   -DNI: 44.707.753
   -Legajo: 119578
 -Santiago Vazquez
-  -Legajo:
-  -DNI
+  -Legajo: 119559
+  -DNI 47.692.770
