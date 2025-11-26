@@ -29,11 +29,11 @@ def guardar_dados(lista_dados, dados_usables):
             print(lista_dados)
             break
         print(lista_dados)
-        posicion=int(input("elija un dado a guardar(1-5 por su posicion"))
+        posicion=int(input(f"elija un dado a guardar(1-{dados_usables} por su posicion): "))
         borrado = lista_dados[(posicion-1)]
         dados_mano.append(borrado)
         lista_dados.remove(borrado)
         dados_usables -=1
         print(lista_dados)    
         print(dados_mano)
-        return(dados_usables, dados_mano)
+    return(dados_usables, dados_mano)
