@@ -1,4 +1,5 @@
 import random
+import Paquetes.Funciones_Comparar as Fc
 def jugar():
     ronda = 0
     while ronda != 10:
@@ -16,7 +17,9 @@ def jugar():
             dados_mano.extend(nuevos)
             print(f"dados en mano: {dados_mano}")
             print("\n=== FIN DE RONDA ===")
+    Fc.jugadas_posiblesas(dados_mano)
             
+    
     pass
 def tirar_dados(dados_usables):
     lista_dados=[]
