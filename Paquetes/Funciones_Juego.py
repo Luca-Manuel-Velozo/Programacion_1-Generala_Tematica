@@ -10,6 +10,7 @@ def jugar():
         while tiradas != 3:
             nuevos=[]
             tiradas += 1
+            print(f"RONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
@@ -40,13 +41,21 @@ def guardar_dados(lista_dados, dados_usables):
         desea= str(input("desea guardar dados?(s/n): ")).lower()
         if desea == "n":
             return dados_usables, dados_mano
-        
-        print(lista_dados)
-        posicion=int(input(f"elija un dado a guardar(1-{dados_usables} por su posicion): "))
-        borrado = lista_dados[(posicion-1)]
-        dados_mano.append(borrado)
-        lista_dados.remove(borrado)
-        dados_usables -=1
-        print(lista_dados)    
-        print(dados_mano)
+        elif desea == "s":
+            print(lista_dados)
+            check = False
+            while check == False:
+                posicion=int(input(f"elija un dado a guardar(1-{dados_usables} por su posicion): "))
+                if posicion > dados_usables or posicion <= 0:
+                    print("ingrese un número de posición dentro del rango indicado")
+                else:
+                    check = True
+            borrado = lista_dados[(posicion-1)]
+            dados_mano.append(borrado)
+            lista_dados.remove(borrado)
+            dados_usables -=1
+            print(lista_dados)    
+            print(dados_mano)
+        else:
+            print("ingrese una opción válida")
     return(dados_usables, dados_mano)
