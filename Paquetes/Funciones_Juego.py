@@ -17,7 +17,8 @@ def jugar():
             dados_usables , nuevos  = guardar_dados(lista_dados, dados_usables)
             dados_mano.extend(nuevos)
             print(f"dados en mano: {dados_mano}")
-            print("\n=== FIN DE RONDA ===")
+            print(f"\n=== FIN TIRADA N°{tiradas} ===")
+        print(f"\n=== FIN RONDA N°{ronda} ===")
     Fc.jugadas_posibles(dados_mano)
             
     
