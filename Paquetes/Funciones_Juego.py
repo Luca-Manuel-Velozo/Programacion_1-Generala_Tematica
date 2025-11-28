@@ -18,7 +18,7 @@ def jugar():
             dados_mano.extend(nuevos)
             print(f"dados en mano: {dados_mano}")
             print("\n=== FIN DE RONDA ===")
-    Fc.jugadas_posiblesas(dados_mano)
+    Fc.jugadas_posibles(dados_mano)
             
     
     pass
