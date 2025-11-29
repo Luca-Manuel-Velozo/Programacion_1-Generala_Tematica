@@ -7,6 +7,7 @@ def jugar():
         tiradas = 0
         dados_usables = 5 
         dados_mano=[]
+        dados_def=[]
         while tiradas != 3:
             nuevos=[]
             tiradas += 1
@@ -15,11 +16,13 @@ def jugar():
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
             dados_usables , nuevos  = guardar_dados(lista_dados, dados_usables)
-            dados_mano.extend(nuevos)
-            print(f"dados en mano: {dados_mano}")
+            dados_def.extend(nuevos)
+            print(Fc.categorias(dados_def))
+            print(f"dados en mano: {dados_def}")
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
+            return dados_def
         print(f"\n=== FIN RONDA N°{ronda} ===")
-    Fc.jugadas_posibles(dados_mano)
+   
             
     
     pass
@@ -60,3 +63,5 @@ def guardar_dados(lista_dados, dados_usables):
         else:
             print("ingrese una opción válida")
     return(dados_usables, dados_mano)
+
+
