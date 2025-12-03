@@ -1,7 +1,12 @@
 import random
 import Paquetes.Funciones_Comparar as Fc
+import Paquetes.Funciones_CSV as Fcsv
+
+
 def jugar():
+    Fcsv.cargar_csv
     ronda = 0
+    
     while ronda != 10:
         ronda += 1
         tiradas = 0
@@ -9,23 +14,26 @@ def jugar():
         dados_mano=[]
         dados_def=[]
         while tiradas != 3:
-            nuevos=[]
+            
             tiradas += 1
             print(f"RONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
-            dados_usables , nuevos  = guardar_dados(lista_dados, dados_usables)
-            dados_def.extend(nuevos)
+            dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
+            print(dados_mano)
+            print(lista_dados)
+            print(dados_def)
+            dados_def.extend(lista_dados)
+            dados_def.extend(dados_mano)
             print(f"dados en mano: {dados_def}")
-            opciones(tiradas, dados_def)
+            opciones_ronda(tiradas, dados_def)
+            dados_def=[]
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
-            return dados_def
+            
         print(f"\n=== FIN RONDA N°{ronda} ===")
    
             
-    
-    pass
 def tirar_dados(dados_usables):
     lista_dados=[]
     for i in range (dados_usables):
@@ -38,13 +46,12 @@ def tirar_dados(dados_usables):
 
 
 
-def guardar_dados(lista_dados, dados_usables):
-    dados_mano=[]
+def guardar_dados(lista_dados, dados_usables, dados_mano):
     desea = ""
     while desea != "n" :
         desea= str(input("desea guardar dados?(s/n): ")).lower()
         if desea == "n":
-            return dados_usables, dados_mano
+            return dados_usables, dados_mano, lista_dados
         elif desea == "s":
             print(lista_dados)
             check = False
@@ -62,9 +69,9 @@ def guardar_dados(lista_dados, dados_usables):
             print(dados_mano)
         else:
             print("ingrese una opción válida")
-    return(dados_usables, dados_mano)
+    return dados_usables, dados_mano , lista_dados
 
-def opciones(tirada, dados_def):
+def opciones_ronda(tirada, dados_def):
     if tirada < 3:
         print('''
         =======================================
@@ -78,12 +85,15 @@ def opciones(tirada, dados_def):
           eliga una opción:
           1-anotar puntos
         =======================================''')
-    while opciones != 1 or opciones != 2:
+    opciones = int(0)
+    exit = False
+    while exit == False:
         opciones = int(input("==="))
         if opciones == 1:
             Fc.comparacion_mano(dados_def)
+            exit = True
         elif opciones == 2:
-            pass
+            exit = True
         else:
             print("ingrese un valor válido")
 

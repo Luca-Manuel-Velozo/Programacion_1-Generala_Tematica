@@ -1,5 +1,6 @@
 import Paquetes.Funciones_Generales as Fg
 import Paquetes.Funciones_Juego as Fj
+import Paquetes.Funciones_CSV as Fcsv
 
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
@@ -68,3 +69,5 @@ def comparacion_mano(dados_def):
     }
     for clave, valor in categorias.items():
         print(f"{clave}  {valor}")
+    categoria = str(input("ELIJA LA CATEGORÍA: ")).lower
+    Fcsv.sumar_puntos(categoria, puntos)

@@ -14,11 +14,12 @@ categorias_CSV = {
     "generala": None
 }
 
-with open("puntos.csv", "w", newline="") as archivo:
-    escritor = csv.writer(archivo)
-    escritor.writerow(["categoria", "puntos"])
-    for cate in categorias_CSV:
-        escritor.writerow([cate, ""])
+def cargar_csv():
+    with open("puntos.csv", "w", newline="") as archivo:
+        escritor = csv.writer(archivo)
+        escritor.writerow(["categoria", "puntos"])
+        for cate in categorias_CSV:
+            escritor.writerow([cate, ""])
 
 def sumar_puntos(categoria_elegida, puntos):
     
