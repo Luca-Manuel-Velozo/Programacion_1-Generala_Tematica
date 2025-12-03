@@ -1,3 +1,6 @@
+import csv
+
+
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
     for i in dados_def:
@@ -38,7 +41,7 @@ def jugadas_posibles(dados_def, jugada):
         if dados_def[0]==dados_def[1] and dados_def[1]==dados_def[2] and dados_def[2] == dados_def[3] and dados_def[3] == dados_def[4]:
             return 50
         else: return 0
-        
+
 def comparacion_mano(dados_def):
     UNOS = jugadas_1_6(1, dados_def)
     DOSES = jugadas_1_6(2, dados_def)
@@ -63,8 +66,33 @@ def comparacion_mano(dados_def):
         "poker": POKER,
         "generala": GENERALA,   
     }
-    print(categorias)
+    for clave, valor in categorias.items():
+        print(f"{clave}  {valor}")
+'''    
+    with open("categorias.csv", "w", newline="") as archivo:
+        escritor = csv.writer(archivo)
+        escritor.writerow(["categoria", "valor"]) 
+
+        for clave, valor in categorias.items():
+            escritor.writerow([clave, valor])
+'''
+#esto de momento no, no llego ahora pero ya tengo la forma de pasarlo al cvs a medida que siguen las rondas
+
 
 
 dados_def= [1,2,3,4,5]
 comparacion_mano(dados_def)   
+
+
+categorias_csv = {
+    "1": None,
+    "2": None,
+    "3": None,
+    "4": None,
+    "5": None,
+    "6": None,
+    "escalera": None,
+    "full": None,
+    "poker": None,
+    "generala": None
+}

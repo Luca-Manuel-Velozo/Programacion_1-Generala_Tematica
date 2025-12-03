@@ -17,8 +17,8 @@ def jugar():
             lista_dados = tirar_dados(dados_usables)
             dados_usables , nuevos  = guardar_dados(lista_dados, dados_usables)
             dados_def.extend(nuevos)
-            print(Fc.categorias(dados_def))
             print(f"dados en mano: {dados_def}")
+            opciones(tiradas, dados_def)
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
             return dados_def
         print(f"\n=== FIN RONDA N°{ronda} ===")
@@ -64,4 +64,26 @@ def guardar_dados(lista_dados, dados_usables):
             print("ingrese una opción válida")
     return(dados_usables, dados_mano)
 
+def opciones(tirada, dados_def):
+    if tirada < 3:
+        print('''
+        =======================================
+          eliga una opción:
+          1-anotar puntos
+          2-siguiente tirada
+        =======================================''')
+    else:
+        print('''
+        =======================================
+          eliga una opción:
+          1-anotar puntos
+        =======================================''')
+    while opciones != 1 or opciones != 2:
+        opciones = int(input("==="))
+        if opciones == 1:
+            Fc.comparacion_mano(dados_def)
+        elif opciones == 2:
+            pass
+        else:
+            print("ingrese un valor válido")
 
