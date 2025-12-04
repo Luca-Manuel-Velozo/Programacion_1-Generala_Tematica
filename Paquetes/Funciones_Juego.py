@@ -1,11 +1,12 @@
 import random
 import Paquetes.Funciones_Comparar as Fc
 import Paquetes.Funciones_CSV as Fcsv
-import Paquetes.Funciones_Juego as Fj
+import Paquetes.Funciones_json as Fjson
 
 
 def jugar():
     Fcsv.cargar_csv()
+    nombre_archivo = Fcsv.cargar_nombre()
     ronda = 0
     
     while ronda != 10:
@@ -19,6 +20,7 @@ def jugar():
             tiradas += 1
             print(f"RONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
+            print(f"PUNTOS |{Fcsv.total_puntos_csv()}|")
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
             dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
@@ -33,6 +35,8 @@ def jugar():
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
             
         print(f"\n=== FIN RONDA N°{ronda} ===")
+    Fjson.guardar_json_partida()
+    Fjson.guardar_datos
    
             
 def tirar_dados(dados_usables):
