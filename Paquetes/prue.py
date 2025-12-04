@@ -1,5 +1,5 @@
 import csv
-
+'''
 
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
@@ -68,13 +68,15 @@ def comparacion_mano(dados_def):
     }
     for clave, valor in categorias.items():
         print(f"{clave}  {valor}")
-'''    
+'''  
+'''  
     with open("categorias.csv", "w", newline="") as archivo:
         escritor = csv.writer(archivo)
         escritor.writerow(["categoria", "valor"]) 
 
         for clave, valor in categorias.items():
             escritor.writerow([clave, valor])
+'''
 '''
 #esto de momento no, no llego ahora pero ya tengo la forma de pasarlo al cvs a medida que siguen las rondas
 
@@ -83,7 +85,8 @@ def comparacion_mano(dados_def):
 dados_def= [1,2,3,4,5]
 comparacion_mano(dados_def)   
 
-
+'''
+'''
 categorias_csv = {
     "1": None,
     "2": None,
@@ -96,3 +99,21 @@ categorias_csv = {
     "poker": None,
     "generala": None
 }
+'''
+
+categorias_csv = {
+    "1": "jo",
+    "2": "ji",
+    "3": "ja",
+    "4": "je",
+    "5": "ju",
+    "6": "la",
+    "escalera": 56,
+    "full": 45,
+    "poker": 21,
+    "generala": 42,
+}    
+categoria = "1"
+puntos = categorias_csv[categoria]
+
+print(puntos)

@@ -1,10 +1,11 @@
 import random
 import Paquetes.Funciones_Comparar as Fc
 import Paquetes.Funciones_CSV as Fcsv
+import Paquetes.Funciones_Juego as Fj
 
 
 def jugar():
-    Fcsv.cargar_csv
+    Fcsv.cargar_csv()
     ronda = 0
     
     while ronda != 10:
@@ -27,7 +28,7 @@ def jugar():
             dados_def.extend(lista_dados)
             dados_def.extend(dados_mano)
             print(f"dados en mano: {dados_def}")
-            opciones_ronda(tiradas, dados_def)
+            tiradas = opciones_ronda(tiradas, dados_def)
             dados_def=[]
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
             
@@ -49,9 +50,15 @@ def tirar_dados(dados_usables):
 def guardar_dados(lista_dados, dados_usables, dados_mano):
     desea = ""
     while desea != "n" :
-        desea= str(input("desea guardar dados?(s/n): ")).lower()
+        
+        if dados_usables == 0:
+            desea == "n"
+            return dados_usables, dados_mano, lista_dados 
+        else:
+            desea= str(input("desea guardar dados?(s/n): ")).lower()
         if desea == "n":
             return dados_usables, dados_mano, lista_dados
+        
         elif desea == "s":
             print(lista_dados)
             check = False
@@ -71,8 +78,8 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
             print("ingrese una opción válida")
     return dados_usables, dados_mano , lista_dados
 
-def opciones_ronda(tirada, dados_def):
-    if tirada < 3:
+def opciones_ronda(tiradas, dados_def):
+    if tiradas < 3:
         print('''
         =======================================
           eliga una opción:
@@ -91,9 +98,13 @@ def opciones_ronda(tirada, dados_def):
         opciones = int(input("==="))
         if opciones == 1:
             Fc.comparacion_mano(dados_def)
+            tiradas = 3
             exit = True
+            return tiradas
         elif opciones == 2:
             exit = True
+            return tiradas
         else:
             print("ingrese un valor válido")
+
 

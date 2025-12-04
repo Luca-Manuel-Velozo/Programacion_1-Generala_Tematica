@@ -67,7 +67,27 @@ def comparacion_mano(dados_def):
         "poker": POKER,
         "generala": GENERALA,   
     }
+    enumerar = 1
     for clave, valor in categorias.items():
-        print(f"{clave}  {valor}")
-    categoria = str(input("ELIJA LA CATEGORÍA: ")).lower
-    Fcsv.sumar_puntos(categoria, puntos)
+        print(f"[{enumerar}] {clave}: {valor}")
+        enumerar +=1
+    check = False
+    while check == False:
+        while True: 
+            categoria = str(input("ELIJA EL NÚMERO DE LA CATEGORÍA A GUARDAR: "))
+            if categoria == "7":
+                categoria = "escalera"
+            elif categoria == "8":
+                categoria = "full"
+            elif categoria == "9":
+                categoria = "poker"
+            elif categoria == "10":
+                categoria = "generala"
+            if Fcsv.categoria_disponible(categoria):
+                break
+            print("Esa categoría ya fue usada.")
+
+        
+        puntos = categorias[categoria]
+        Fcsv.sumar_puntos(categoria, puntos)
+        check = True

@@ -19,7 +19,16 @@ def cargar_csv():
         escritor = csv.writer(archivo)
         escritor.writerow(["categoria", "puntos"])
         for cate in categorias_CSV:
-            escritor.writerow([cate, ""])
+            escritor.writerow([cate, None])
+
+def categoria_disponible(categoria):
+    with open("puntos.csv", "r") as archivo:
+        lector = csv.DictReader(archivo)
+        for fila in lector:
+            if fila["categoria"] == categoria:
+                return fila["puntos"] in ("", None)
+    return False
+
 
 def sumar_puntos(categoria_elegida, puntos):
     
