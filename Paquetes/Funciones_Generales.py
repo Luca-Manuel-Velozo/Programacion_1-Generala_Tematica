@@ -1,5 +1,6 @@
 import Paquetes.Funciones_Juego as Fj
 import Paquetes.Funciones_Generales as Fg
+import Paquetes.funciones_niveles as Fn
 
 def menu():
     print("\n===== Generala Mágica =====\n")
@@ -14,7 +15,8 @@ def menu():
         opcion = input("---Seleccione una opción: ")
     
         if opcion == "1":
-            Fj.jugar()
+            nivel = Fn.seleccionar_nivel()
+            Fj.jugar(nivel)
 
         elif opcion == "2":
             a=3
