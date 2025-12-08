@@ -16,7 +16,6 @@ def jugar(nivel_seleccionado):
         dados_mano=[]
         dados_def=[]
         while tiradas != 3:
-            tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
             tiradas += 1
             print(f"RONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
@@ -25,7 +24,7 @@ def jugar(nivel_seleccionado):
             lista_dados = tirar_dados(dados_usables)
             dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
             print(dados_def)
-            dados_def.extend(dados_mano)
+            dados_def = lista_dados + dados_mano
             tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
 
@@ -129,7 +128,7 @@ def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
           eliga una opción:
           1-TIRAR
         =======================================''')
-    elif tiradas < 3 and tiradas >1:
+    elif tiradas < 3 and tiradas >=1:
         print('''
             =======================================
              eliga una opción:
