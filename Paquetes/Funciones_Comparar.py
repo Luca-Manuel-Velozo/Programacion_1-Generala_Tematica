@@ -1,7 +1,7 @@
 import Paquetes.Funciones_Generales as Fg
 import Paquetes.Funciones_Juego as Fj
 import Paquetes.Funciones_CSV as Fcsv
-
+import Paquetes.funciones_niveles as Fn
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
     for i in dados_def:
@@ -9,7 +9,7 @@ def jugadas_1_6(NUM, dados_def):
             puntos += NUM
     return puntos
 
-def jugadas_posibles(dados_def, jugada):
+def jugadas_posibles(dados_def, jugada, nivel):
     dados_def.sort()
     escalera1 = [1,2,3,4,5]
     escalera2 = [2,3,4,5,6]
