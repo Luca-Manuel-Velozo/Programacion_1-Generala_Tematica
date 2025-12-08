@@ -67,6 +67,7 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
         
         elif desea == "s":
             indices_borrar = []
+            entrada_valida =False
             while entrada_valida == False:
                 
                 entrada_valida =False
