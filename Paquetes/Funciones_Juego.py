@@ -70,7 +70,6 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
             entrada_valida =False
             while entrada_valida == False:
                 
-                entrada_valida =False
                 entrada = int(input(f"elija los dados a guardar por su posicion separados por coma (1-{dados_usables}): "))
                 partes = entrada.split(',')
                 indices_temporales = []
