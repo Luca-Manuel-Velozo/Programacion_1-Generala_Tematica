@@ -24,16 +24,11 @@ def jugar(nivel_seleccionado):
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
             dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
-            print(dados_mano)
-            print(lista_dados)
             print(dados_def)
-            dados_def.extend(lista_dados)
             dados_def.extend(dados_mano)
-            print(f"dados en mano: {dados_def}")
             tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
-            print(dados_def)
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
-            
+
         print(f"\n=== FIN RONDA N°{ronda} ===")
     Fjson.guardar_json_partida()
     Fjson.guardar_datos()
@@ -128,13 +123,19 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
     return dados_usables, dados_mano, lista_dados
 
 def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
-    if tiradas < 3:
+    if tiradas == 0:
         print('''
         =======================================
           eliga una opción:
-          1-anotar puntos
-          2-siguiente tirada
+          1-TIRAR
         =======================================''')
+    elif tiradas < 3 and tiradas >1:
+        print('''
+            =======================================
+             eliga una opción:
+              1-anotar puntos
+              2-siguiente tirada
+            =======================================''')
     else:
         print('''
         =======================================
