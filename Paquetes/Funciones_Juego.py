@@ -66,7 +66,6 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
             return dados_usables, dados_mano, lista_dados
         
         elif desea == "s":
-            print(f"dados disponibles:"[lista_dados])
             indices_borrar = []
             while entrada_valida == False:
                 
