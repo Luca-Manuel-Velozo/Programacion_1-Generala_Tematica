@@ -13,6 +13,12 @@ def seleccionar_nivel():
         print(f"{indice}. {nivel['nombre']}")
         indice += 1
     
-    opcion = int(input("Elige un nivel: ")) - 1
     
-    return niveles[opcion]
+    while True:
+        opcion = input("Elige un nivel: ")
+        if opcion.isdigit():
+            opcion_num = int(opcion)
+            if 1 <= opcion_num <= len(niveles):
+                return niveles[opcion_num - 1]
+            else:
+                print("debe ingresar un nivel por su indice")
