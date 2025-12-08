@@ -56,30 +56,65 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
     while desea != "n" :
         
         if dados_usables == 0:
-            desea == "n"
+            print("ya usate todos tus dados")
+            desea = "n"
             return dados_usables, dados_mano, lista_dados 
-        else:
-            desea= str(input("desea guardar dados?(s/n): ")).lower()
+        
+        desea= str(input("desea guardar dados?(s/n): ")).lower()
+
         if desea == "n":
             return dados_usables, dados_mano, lista_dados
         
         elif desea == "s":
-            print(lista_dados)
-            check = False
-            while check == False:
-                posicion=int(input(f"elija un dado a guardar(1-{dados_usables} por su posicion): "))
-                if posicion > dados_usables or posicion <= 0:
-                    print("ingrese un número de posición dentro del rango indicado")
-                else:
-                    check = True
-            borrado = lista_dados[(posicion-1)]
-            dados_mano.append(borrado)
-            lista_dados.remove(borrado)
-            dados_usables -=1
-            print(lista_dados)    
-            print(dados_mano)
-        else:
-            print("ingrese una opción válida")
+            print(f"dados disponibles:"[lista_dados])
+            indices_borrar = []
+            while entrada_valida == False:
+                
+                entrada_valida =False
+                entrada = int(input(f"elija los dados a guardar por su posicion separados por coma (1-{dados_usables}): "))
+                partes = entrada.split(',')
+                indices_temporales = []
+
+                error_encontrado = False
+                for parte in partes:
+                    parte = parte.strip()
+                    if parte.isdigit():
+                        pos = int(parte)
+                        if 1 <= pos <= len(lista_dados):
+                            pos_final = pos-1
+                            if pos_final not in indices_temporales:
+                                indices_temporales.append(pos_final)
+                            else:
+                                print(f"Error: La posición {pos} no existe.")
+                                error_encontrado = True
+                                break
+                        else:
+                            print(f"Error: '{parte}' no es un número válido.")
+                            error_encontrado = True
+                            break
+            if not error_encontrado and len(indices_temporales) > 0:
+                indices_a_borrar = indices_temporales
+                entrada_valida = True
+
+            n = len(indices_a_borrar)
+            for i in range(n):
+                for j in range(0, n - i - 1):
+                    if indices_a_borrar[j] < indices_a_borrar[j + 1]:
+                        aux = indices_a_borrar[j]
+                        indices_a_borrar[j] = indices_a_borrar[j + 1]
+                        indices_a_borrar[j + 1] = aux
+
+            for  pos_final in indices_a_borrar:
+                dado_movido = lista_dados.pop(pos_final)
+                dados_mano.append(dado_movido)
+                dados_usables -= 1
+
+            print(f"Dados restantes: {lista_dados}")    
+            print(f"Tu mano: {dados_mano}")
+        else: print("ingrese s para si y n para no")
+
+
+  
     return dados_usables, dados_mano , lista_dados
 
 def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
