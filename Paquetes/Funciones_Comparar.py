@@ -15,45 +15,45 @@ def jugadas_posibles(dados_def, jugada):
     escalera2 = [2,3,4,5,6]
     if jugada == "escalera":
         if dados_def == escalera1 or dados_def == escalera2:
-            return 35
+            return nivel["puntos"]["escalera"]
         else:
             return 0
     elif jugada == "full":
         if dados_def[0]==dados_def[1] and dados_def[1]==dados_def[2] and dados_def[3] == dados_def[4]:
             if dados_def[2] != dados_def[3]:
-                return 40
+               return nivel["puntos"]["full"]
             else:
                 return 0
         elif dados_def[0]==dados_def[1] and dados_def[2]==dados_def[3] and dados_def[3] == dados_def[4]:
             if dados_def[1] != dados_def[2]:
-                return 40
+                return nivel["puntos"]["full"]
             else: 
                 return 0
         else:
             return 0
     elif jugada == "poker":
         if dados_def[0]==dados_def[1] and dados_def[1]==dados_def[2] and dados_def[2] == dados_def[3]:
-            return 45
+            return nivel["puntos"]["poker"]
         elif dados_def[1]==dados_def[2] and dados_def[2]==dados_def[3] and dados_def[3] == dados_def[4]:
-            return 45
+            return nivel["puntos"]["poker"]
         else:
             return 0
     elif jugada == "generala":
         if dados_def[0]==dados_def[1] and dados_def[1]==dados_def[2] and dados_def[2] == dados_def[3] and dados_def[3] == dados_def[4]:
-            return 50
+            return nivel["puntos"]["generala"]
         else: return 0
 
-def comparacion_mano(dados_def):
+def comparacion_mano(dados_def, nivel):
     UNOS = jugadas_1_6(1, dados_def)
     DOSES = jugadas_1_6(2, dados_def)
     TRESES = jugadas_1_6(3, dados_def)
     CUATROS = jugadas_1_6(4,dados_def)
     CINCOS = jugadas_1_6(5, dados_def)
     SEISES = jugadas_1_6(6, dados_def)
-    ESCALERA = jugadas_posibles(dados_def, "escalera")
-    FULL = jugadas_posibles(dados_def, "full")
-    POKER = jugadas_posibles(dados_def, "poker")
-    GENERALA = jugadas_posibles(dados_def, "generala")
+    ESCALERA = jugadas_posibles(dados_def, "escalera", nivel)
+    FULL = jugadas_posibles(dados_def, "full", nivel )
+    POKER = jugadas_posibles(dados_def, "poker", nivel)
+    GENERALA = jugadas_posibles(dados_def, "generala", nivel)
 
     categorias ={
         "1": UNOS, 

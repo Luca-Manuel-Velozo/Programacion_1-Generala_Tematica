@@ -4,7 +4,7 @@ import Paquetes.Funciones_CSV as Fcsv
 import Paquetes.Funciones_json as Fjson
 
 
-def jugar():
+def jugar(nivel_seleccionado):
     Fcsv.cargar_csv()
     nombre_archivo = Fcsv.cargar_nombre()
     ronda = 0
@@ -16,7 +16,7 @@ def jugar():
         dados_mano=[]
         dados_def=[]
         while tiradas != 3:
-            
+            tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
             tiradas += 1
             print(f"RONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
@@ -82,7 +82,7 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
             print("ingrese una opción válida")
     return dados_usables, dados_mano , lista_dados
 
-def opciones_ronda(tiradas, dados_def):
+def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
     if tiradas < 3:
         print('''
         =======================================
@@ -101,7 +101,7 @@ def opciones_ronda(tiradas, dados_def):
     while exit == False:
         opciones = int(input("==="))
         if opciones == 1:
-            Fc.comparacion_mano(dados_def)
+            Fc.comparacion_mano(dados_def, nivel_seleccionado)
             tiradas = 3
             exit = True
             return tiradas
