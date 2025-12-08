@@ -30,7 +30,7 @@ def jugar(nivel_seleccionado):
             dados_def.extend(lista_dados)
             dados_def.extend(dados_mano)
             print(f"dados en mano: {dados_def}")
-            tiradas = opciones_ronda(tiradas, dados_def)
+            tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
             dados_def=[]
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
             
