@@ -23,9 +23,9 @@ def jugar(nivel_seleccionado):
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
             dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
-            print(dados_def)
             dados_def = lista_dados + dados_mano
             tiradas = opciones_ronda(tiradas, dados_def, nivel_seleccionado)
+            print(dados_def)
             print(f"\n=== FIN TIRADA N°{tiradas} ===")
 
         print(f"\n=== FIN RONDA N°{ronda} ===")
