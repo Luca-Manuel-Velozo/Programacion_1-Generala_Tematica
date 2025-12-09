@@ -146,6 +146,9 @@ def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
     while exit == False:
         opciones = int(input("==="))
         if opciones == 1:
+            print("===tus dados:===")
+            print(dados_def)
+            print("===jugadas posibles===")
             Fc.comparacion_mano(dados_def, nivel_seleccionado)
             tiradas = 3
             exit = True
