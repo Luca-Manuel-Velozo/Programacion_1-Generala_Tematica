@@ -1,22 +1,22 @@
 [
     {
-        "nombre": "Nivel Fácil",
+        "nombre": "Nivel Facil - 110pts",
         "puntos": {
             "escalera": 20,
             "full": 30,
             "poker": 40,
             "generala": 50
         },
-        "objetivo": 100
+        "objetivo": 110
     },
     {
-        "nombre": "Nivel Difícil",
+        "nombre": "Nivel Dificil - 345pts",
         "puntos": {
             "escalera": 35,
             "full": 45,
             "poker": 60,
             "generala": 100
         },
-        "objetivo": 250
+        "objetivo": 345
     }
 ]
