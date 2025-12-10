@@ -4,6 +4,15 @@ import Paquetes.Funciones_CSV as Fcsv
 import Paquetes.Funciones_json as Fjson
 
 
+runas = {
+    1: "⟡ Althar",
+    2: "ᚢ Vekir",
+    3: "ᚦ Tryna",
+    4: "ᚨ Kaldur",
+    5: "ᚱ Sereth",
+    6: "ᚹ Zhal"
+}
+
 def jugar(nivel_seleccionado):
     Fcsv.cargar_csv()
     Fcsv.cargar_nombre_y_nivel(nivel_seleccionado["nombre"])
@@ -17,9 +26,10 @@ def jugar(nivel_seleccionado):
         dados_def=[]
         while tiradas != 3:
             tiradas += 1
-            print(f"RONDA N°{ronda}")
+            print(f"\nRONDA N°{ronda}")
             print(f"tirada numero |{tiradas}|")
             print(f"PUNTOS |{Fcsv.total_puntos_csv()}|")
+            planilla_puntajes()
             print(f"dados en mano |{dados_mano}|")
             lista_dados = tirar_dados(dados_usables)
             dados_usables , dados_mano, lista_dados = guardar_dados(lista_dados, dados_usables, dados_mano)
@@ -37,6 +47,8 @@ def tirar_dados(dados_usables):
         lista_dados.append(random.randint(1, 6))
     print("\n=== DADOS ===")
     print(lista_dados)
+    print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   =====   {lista_dados[2]}   =====   {lista_dados[3]}   =====   {lista_dados[4]}   ===",)
+    print([runas[dado] for dado in lista_dados])
     print("\n=============")
     return(lista_dados)
 
@@ -156,5 +168,12 @@ def opciones_ronda(tiradas, dados_def, nivel_seleccionado):
                     return tiradas
                 else:
                     print("ingrese un valor válido")
+
+def planilla_puntajes():
+    planilla = Fcsv.csv_a_diccionario()
+    for clave, valor in planilla.items():
+        print(f"== {clave}:    {valor}")
+      
+
 
 
