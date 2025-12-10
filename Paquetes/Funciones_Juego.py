@@ -46,8 +46,16 @@ def tirar_dados(dados_usables):
     for i in range (dados_usables):
         lista_dados.append(random.randint(1, 6))
     print("\n=== DADOS ===")
-    print(lista_dados)
-    print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   =====   {lista_dados[2]}   =====   {lista_dados[3]}   =====   {lista_dados[4]}   ===",)
+    if dados_usables == 5:
+        print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   =====   {lista_dados[2]}   =====   {lista_dados[3]}   =====   {lista_dados[4]}   ===",)
+    elif dados_usables == 4:
+        print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   =====   {lista_dados[2]}   =====   {lista_dados[3]}   ===",)
+    elif dados_usables == 3:
+        print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   =====   {lista_dados[2]}   ===",)
+    elif dados_usables == 2:
+        print(f"===  {lista_dados[0]}   =====   {lista_dados[1]}   ===",)
+    elif dados_usables == 1:
+        print(f"===  {lista_dados[0]}   ===",)
     print([runas[dado] for dado in lista_dados])
     print("\n=============")
     return(lista_dados)
