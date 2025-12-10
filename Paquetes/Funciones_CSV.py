@@ -1,6 +1,5 @@
 import csv
 import os
-import Paquetes.Funciones_Juego as Fj
 
 categorias_CSV = {
     "nombre:": None,
@@ -44,8 +43,6 @@ def cargar_nombre_y_nivel(nivel):
         escritor = csv.DictWriter(archivo, fieldnames=campos)
         escritor.writeheader()
         escritor.writerows(filas)
-
-
 
 def csv_a_diccionario():
     datos = {}
@@ -94,8 +91,6 @@ def total_puntos_csv():
 
     return total
 
-
-
 def categoria_disponible(categoria):
     with open("puntos.csv", "r") as archivo:
         lector = csv.DictReader(archivo)
@@ -103,7 +98,6 @@ def categoria_disponible(categoria):
             if fila["categoria"] == categoria:
                 return fila["puntos"] in ("", None)
     return False
-
 
 def sumar_puntos(categoria_elegida, puntos):
     
@@ -121,7 +115,6 @@ def sumar_puntos(categoria_elegida, puntos):
         escritor = csv.DictWriter(archivo, fieldnames=campos)
         escritor.writeheader()
         escritor.writerows(filas)
-
 
 def puntos_ranking(jugador):
         return int(jugador["total"])

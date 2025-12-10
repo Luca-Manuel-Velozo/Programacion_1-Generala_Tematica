@@ -1,4 +1,5 @@
 import Paquetes.Funciones_CSV as Fcsv
+
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
     for i in dados_def:

@@ -30,8 +30,7 @@ def jugar(nivel_seleccionado):
         print(f"\n=== FIN RONDA N°{ronda} ===")
     Fjson.guardar_json_partida()
     Fcsv.act_ranking()
-   
-            
+              
 def tirar_dados(dados_usables):
     lista_dados=[]
     for i in range (dados_usables):
@@ -40,9 +39,6 @@ def tirar_dados(dados_usables):
     print(lista_dados)
     print("\n=============")
     return(lista_dados)
-
-
-
 
 def guardar_dados(lista_dados, dados_usables, dados_mano):
     desea = ""
