@@ -1,6 +1,6 @@
 import Paquetes.Funciones_Juego as Fj
+import Paquetes.Funciones_Generales as Fg
 import Paquetes.funciones_niveles as Fn
-import Paquetes.Funciones_CSV as Fcsv
 
 def menu():
     print("\n===== Generala Mágica =====\n")
@@ -19,7 +19,7 @@ def menu():
             Fj.jugar(nivel)
 
         elif opcion == "2":
-            Fcsv.leer_ranking()
+            a=3
         elif opcion == "3":
             creditos()
         elif opcion == "4":
