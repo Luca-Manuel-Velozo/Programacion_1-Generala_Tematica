@@ -10,10 +10,10 @@ categorias_CSV = {
     "4": None,
     "5": None,
     "6": None,
-    "escalera": None,
-    "full": None,
-    "poker": None,
-    "generala": None,
+    "escalera(bola de fuego)" : None,
+    "full(relampago)": None,
+    "poker(nube venenosa)": None,
+    "generala(destello mortal)": None,   
     "total": None
 }
 

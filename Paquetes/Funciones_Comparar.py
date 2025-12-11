@@ -60,10 +60,10 @@ def comparacion_mano(dados_def, nivel):
         "4": CUATROS,
         "5": CINCOS,
         "6": SEISES,
-        "escalera" : ESCALERA,
-        "full": FULL,
-        "poker": POKER,
-        "generala": GENERALA,   
+        "escalera(bola de fuego)" : ESCALERA,
+        "full(relampago)": FULL,
+        "poker(nube venenosa)": POKER,
+        "generala(destello mortal)": GENERALA,   
     }
     enumerar = 1
     for clave, valor in categorias.items():
@@ -74,13 +74,13 @@ def comparacion_mano(dados_def, nivel):
         while True: 
             categoria = str(input("ELIJA EL NÚMERO DE LA CATEGORÍA A GUARDAR: "))
             if categoria == "7":
-                categoria = "escalera"
+                categoria = "escalera(bola de fuego)"
             elif categoria == "8":
-                categoria = "full"
+                categoria = "full(relampago)"
             elif categoria == "9":
-                categoria = "poker"
+                categoria = "poker(nube venenosa)"
             elif categoria == "10":
-                categoria = "generala"
+                categoria = "generala(destello mortal)"
             if Fcsv.categoria_disponible(categoria):
                 break
             print("Esa categoría ya fue usada.")
