@@ -1,14 +1,14 @@
 categoria,puntos
-nombre:,LucaV
-nivel:,Nivel Facil - 110pts
-1,
+nombre:,Luca
+nivel:,Nivel Dificil - 345pts
+1,1
 2,4
-3,9
+3,3
 4,8
-5,
-6,
-escalera(bola de fuego),
-full(relampago),30
-poker(nube venenosa),
-generala(destello mortal),
-total,51
+5,5
+6,18
+escalera(bola de fuego),0
+full(relampago),45
+poker(nube venenosa),0
+generala(destello mortal),0
+total,84

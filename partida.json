@@ -1,17 +1,17 @@
 {
     "categorias": {
-        "nombre:": "Lucardo",
-        "nivel:": "Nivel Facil - 110pts",
+        "nombre:": "Luca",
+        "nivel:": "Nivel Dificil - 345pts",
         "1": 1,
-        "2": 2,
-        "3": 6,
+        "2": 4,
+        "3": 3,
         "4": 8,
         "5": 5,
-        "6": 6,
-        "escalera": 20,
-        "full": 30,
-        "poker": 40,
-        "generala": 0,
-        "total": 113
+        "6": 18,
+        "escalera(bola de fuego)": 0,
+        "full(relampago)": 45,
+        "poker(nube venenosa)": 0,
+        "generala(destello mortal)": 0,
+        "total": 84
     }
 }
