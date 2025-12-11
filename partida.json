@@ -1,0 +1,17 @@
+{
+    "categorias": {
+        "nombre:": "Lucardo",
+        "nivel:": "Nivel Facil - 110pts",
+        "1": 1,
+        "2": 2,
+        "3": 6,
+        "4": 8,
+        "5": 5,
+        "6": 6,
+        "escalera": 20,
+        "full": 30,
+        "poker": 40,
+        "generala": 0,
+        "total": 113
+    }
+}
