@@ -12,7 +12,7 @@ runas = {
     5: "ᚱ Sereth",
     6: "ᚹ Zhal"
 }
-#
+
 def jugar(nivel_seleccionado):
     Fcsv.cargar_csv()
     Fcsv.cargar_nombre_y_nivel(nivel_seleccionado["nombre"])
@@ -75,7 +75,6 @@ def guardar_dados(lista_dados, dados_usables, dados_mano):
             return dados_usables, dados_mano, lista_dados
         
         elif desea == "s":
-            indices_borrar = []
             entrada_valida = False
             
             while not entrada_valida:
