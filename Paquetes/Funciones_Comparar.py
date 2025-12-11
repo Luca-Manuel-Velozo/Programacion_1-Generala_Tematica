@@ -1,7 +1,5 @@
-import Paquetes.Funciones_Generales as Fg
-import Paquetes.Funciones_Juego as Fj
 import Paquetes.Funciones_CSV as Fcsv
-import Paquetes.funciones_niveles as Fn
+
 def jugadas_1_6(NUM, dados_def):
     puntos = 0
     for i in dados_def:

@@ -10,7 +10,7 @@ def seleccionar_nivel():
     print("\n--- SELECCIÓN DE NIVEL ---")
     indice = 1
     for nivel in niveles:
-        print(f"{indice}. {nivel['nombre']}")
+        print(f"{indice}. {nivel["nombre"]}")
         indice += 1
     
     
